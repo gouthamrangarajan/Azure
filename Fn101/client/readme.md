@@ -10,4 +10,5 @@ const useMsgsFromAzureFunction = () => {
 };
 ```
 
-![Screenshot](https://github.com/gouthamrangarajan/Azure/blob/main/Fn101/screenshot.jpg)
+- Sample Screenshot
+  ![Screenshot](https://github.com/gouthamrangarajan/Azure/blob/main/Fn101/screenshot.jpg)

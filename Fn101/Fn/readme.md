@@ -17,4 +17,4 @@ public HttpResponseData Run([HttpTrigger(AuthorizationLevel.Anonymous, "get", "p
 
 #### official link
 
-[https://docs.microsoft.com/en-us/azure/azure-functions/create-first-function-vs-code-csharp]
+[https://docs.microsoft.com/en-us/azure/azure-functions/create-first-function-vs-code-csharp](https://docs.microsoft.com/en-us/azure/azure-functions/create-first-function-vs-code-csharp)
