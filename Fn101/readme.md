@@ -1,4 +1,5 @@
-### simple http triggered azure function sending random number when invoked
-#### sample client using vite,vue (not sfc)
+### Simple http triggered azure function, send random number when invoked
+
 ##### Fn folder shows azure function code
-##### client folder shows sample vite,vue code consuming the function
+
+##### Client folder shows sample client using vite,vue code consuming the function

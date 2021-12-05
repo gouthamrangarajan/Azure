@@ -9,3 +9,5 @@ const useMsgsFromAzureFunction = () => {
   return { fetchNew };
 };
 ```
+
+![Screenshot](https://github.com/gouthamrangarajan/Azure/blob/main/Fn101/screenshot.jpg)
