@@ -1,0 +1,26 @@
+[v-cloak] {
+  display: none;
+}
+
+.slide-down-enter-active,
+.slide-down-leave-active,
+.list-enter-active,
+.list-leave-active {
+  transition: all 0.3s;
+}
+
+.slide-down-enter-from,
+.slide-down-leave-to {
+  opacity: 0;
+  transform: translateY(-100%);
+}
+
+.list-enter-from,
+.list-leave-to {
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+body {
+  overflow-x: hidden;
+}

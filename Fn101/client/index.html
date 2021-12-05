@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <title>Vite App</title>
+  </head>
+  <body>
+    <div
+      id="app"
+      v-cloak
+      class="min-h-screen w-screen overflow-x-hidden bg-gray-100 flex flex-col"
+    >
+      <app-nav></app-nav>
+      <fn-app-data></fn-app-data>
+    </div>
+    <script type="text/template" id="nav">
+      <nav class="bg-white py-2 px-4 w-full border-b border-gray-300 sticky top-0">
+        <div class=" flex justify-between items-center max-w-5xl mx-auto">
+          <span class="text-2xl font-semibold text-indigo-700">Function Client</span>
+        </div>
+      </nav>
+    </script>
+    <script type="text/template" id="fnAppData">
+        <transition name="slide-down" appear>
+        <div class="mx-auto mt-2 bg-white shadow-2xl py-4 px-6 rounded-xl flex flex-col space-y-3">
+            <div class="w-full flex space-x-10 items-center">
+              <span class="text-lg text-green-700">Click on Fetch to fetch new data...</span>
+              <button class="appearance-none outline-none py-1 px-3 rounded bg-pink-600 hover:opacity-90
+                  focus:ring-2 focus:ring-offset-2 focus:ring-pink-400 focus:ring-offset-pink-100 text-white"
+                   @click.stop="fetchData">
+                   Fetch
+                </button>
+            </div>
+            <transition-group name="list" tag="ul" class="flex flex-col p-1 space-y-1 w-full">
+              <li v-for="(val,ind) in fetchedData" :key="val+'_'+ind"
+                class="py-2 px-4 rounded-lg w-full text-center text-gray-700 bg-white shadow">
+                {{val}}
+              </li>
+            </transition-group>
+        </div>
+      </transition>
+    </script>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script type="module" src="/main.js" defer></script>
+  </body>
+</html>
