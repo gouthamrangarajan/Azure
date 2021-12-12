@@ -18,6 +18,8 @@
 var file = req.Form.Files["file"];
 var ms=new MemoryStream();
 await file.CopyToAsync(ms);
+//Sample to Send back the content
+//can be extended to be uploaded to drive/blob storage after additional parsing/processing
 return new FileContentResult(ms.ToArray(),file.ContentType);
 
 ```
