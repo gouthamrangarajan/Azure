@@ -22,7 +22,7 @@ return new FileContentResult(ms.ToArray(),file.ContentType);
 
 ```
 
-#### client folder shows sample client using Vite and Vue client
+#### client folder shows sample client using Vite and Vue
 
 ```html
 <script id="upload" type="text/template">
