@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>File Upload</title>
+    <meta name="description" content="Vite & Vue App to Upload File" />
+    <style>
+      [v-cloak] {
+        display: none;
+      }
+    </style>
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div
+      id="app"
+      v-cloak
+      class="w-screen h-screen bg-gray-100 flex flex-col items-center"
+    >
+      <app-nav></app-nav>
+      <file-upload></file-upload>
+    </div>
+    <script src="https://unpkg.com/vue@3.2.24/dist/vue.global.prod.js"></script>
+    <script id="nav" type="text/template">
+      <nav class="bg-white w-full sticky top-0 border-b border-gray-300">
+        <div class="py-2 px-4 w-full max-w-5xl mx-auto flex">
+          <span class="text-2xl font-semibold text-green-700">Convert To Pdf</span>
+        </div>
+      </nav>
+    </script>
+    <script id="upload" type="text/template">
+      <transition name="slide-down" appear>
+        <form class="bg-white rounded-xl py-4 px-6 mt-24 shadow-2xl flex flex-col space-y-3"
+          action="http://localhost:7071/api/FileUpload" method="post" enctype="multipart/form-data"
+          >
+          <span class="text-blue-700 font-semibold text-lg">File Upload</span>
+          <div class="flex space-x-3">
+            <button type="button" class="appearance-none outline-none py-2 px-3 rounded-lg
+                  bg-indigo-600 hover:opacity-90 focus:ring-2 focus:ring-offset-2 focus:ring-offset-indigo-100
+                  focus:ring-indigo-400 text-white transition duration-300 text-lg"
+                  @click.stop="()=>uploadRef.click()">
+                Select File
+            </button>
+            <button type="submit"
+              :class="['appearance-none outline-none py-2 px-3 rounded-lg  bg-green-600 hover:opacity-90 focus:ring-2 focus:ring-offset-2 focus:ring-offset-green-100  focus:ring-green-400 text-white text-lg transition duration-300',
+                      {'cursor-pointer':fileName!=''},{'cursor-not-allowed':fileName==''}]"
+                :disabled="fileName==''">
+                Convert
+          </button>
+          </div>
+          <transition name="fade" appear>
+            <div class="w-full text-center text-pink-500" v-show="fileName!=''">
+                {{fileName}}
+            </div>
+          </transition>
+          <input type="file" style="display:none" ref="uploadRef" name="file" @change="fileChanged">
+        </form>
+      </transition>
+    </script>
+    <script type="module" src="/main.js" defer></script>
+  </body>
+</html>
