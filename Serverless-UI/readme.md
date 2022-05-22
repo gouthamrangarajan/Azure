@@ -1,5 +1,5 @@
 ### Serverless UI
-#### Serverless function to render UI using Azure function
+#### Serverless function to render UI in Azure 
 - an idea to send html response in Azure functions 
 1. store html and corresponding js in separate folders
 2. change settings of the above folders to be copied to output directory
